@@ -54,7 +54,7 @@ export default function Recipe({ recipeArray, ingredientsInput, recipeInput }) {
             <Typography
               variant="subtitle1"
               style={{
-                lineHeight: "1.5em",
+                lineHeight: "1.7em",
                 whiteSpace: "pre-line",
                 marginTop: "0.5em",
               }}

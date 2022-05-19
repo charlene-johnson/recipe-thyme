@@ -37,7 +37,6 @@ export default function RecipeForm() {
         },
         ...prev,
       ]);
-      console.log(response.data.choices[0].text);
     });
     setRecipeName((prev) => [
       {
@@ -112,7 +111,6 @@ export default function RecipeForm() {
       </Card>
       {recipeArray &&
         recipeArray.map((recipes, key) => {
-          console.log(recipes);
           return (
             <Recipe
               key={key}
