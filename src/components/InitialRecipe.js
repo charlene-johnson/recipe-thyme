@@ -10,7 +10,13 @@ export default function InitialRecipe() {
       style={{ marginTop: "2em" }}
     >
       <Card
-        sx={{ minWidth: 800, maxWidth: 700, minHeight: 700, marginTop: "2em", marginBottom:"4em" }}
+        sx={{
+          minWidth: 800,
+          maxWidth: 700,
+          minHeight: 700,
+          marginTop: "2em",
+          marginBottom: "4em",
+        }}
       >
         <CardContent>
           <Grid item container direction="column">

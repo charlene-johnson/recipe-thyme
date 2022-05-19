@@ -7,10 +7,9 @@ import Recipe from "./Recipe";
 export default function RecipeForm() {
   const [recipeInput, setRecipeInput] = useState("");
   const [ingredientsInput, setIngredientsInput] = useState("");
-  const [ingredientsList, setIngredientsList] = useState("")
+  const [ingredientsList, setIngredientsList] = useState("");
   const [recipeName, setRecipeName] = useState("");
   const [recipeArray, setRecipeArray] = useState([]);
-  
 
   const data = {
     prompt: `Write a recipe based on the recipe name, ingredients and instructions:Recipe name:\n\n${recipeInput}\n\nIngredients:\n\n${ingredientsInput}\n\nInstructions:`,
@@ -30,20 +29,30 @@ export default function RecipeForm() {
       },
       data: JSON.stringify(data),
     }).then((response) => {
-      setRecipeArray(prev => [{
+      setRecipeArray((prev) => [
+        {
           recipe: recipeInput,
           ingredients: ingredientsInput,
           instructions: response.data.choices[0].text,
-    
-      }, ...prev]);
+        },
+        ...prev,
+      ]);
       console.log(response.data.choices[0].text);
-      
     });
-    setRecipeName(recipeInput)
-    setIngredientsList(ingredientsInput)
+    setRecipeName((prev) => [
+      {
+        recipe: recipeName,
+      },
+      ...prev,
+    ]);
+    setIngredientsList((prev) => [
+      {
+        ingredients: ingredientsList,
+      },
+      ...prev,
+    ]);
     setRecipeInput("");
     setIngredientsInput("");
-    
   }
 
   return (
@@ -101,18 +110,18 @@ export default function RecipeForm() {
           </Grid>
         </CardContent>
       </Card>
-      {recipeArray && recipeArray.map((recipes, key) => {
-          console.log(recipes)
-          return(
+      {recipeArray &&
+        recipeArray.map((recipes, key) => {
+          console.log(recipes);
+          return (
             <Recipe
-            key={key}
-            recipeInput={recipeName}
-            ingredientsInput={ingredientsList}
-            recipeArray={recipes.instructions}
-          
-          />
-          )
-      })}
+              key={key}
+              recipeInput={recipes.recipe}
+              ingredientsInput={recipes.ingredients}
+              recipeArray={recipes.instructions}
+            />
+          );
+        })}
     </Grid>
   );
 }
