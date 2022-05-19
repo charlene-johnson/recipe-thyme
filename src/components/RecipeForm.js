@@ -61,7 +61,7 @@ export default function RecipeForm() {
       alignItems="center"
       style={{ marginTop: "2em" }}
     >
-      <Card sx={{ minWidth: 800, minHeight: 300 }}>
+      <Card sx={{ minWidth: 800, minHeight: 300, marginBottom: "4em" }}>
         <CardContent>
           <Grid item container direction="column" style={{ marginTop: "2em" }}>
             <Grid item style={{ marginBottom: "0.5em" }}>

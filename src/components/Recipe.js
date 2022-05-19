@@ -27,14 +27,13 @@ export default function Recipe({ recipeArray, ingredientsInput, recipeInput }) {
       container
       direction="column"
       alignItems="center"
-      style={{ marginTop: "2em" }}
+      style={{ marginBottom: "4em" }}
     >
       <Card
         sx={{
           minWidth: 800,
           maxWidth: 700,
           minHeight: 700,
-          marginTop: "2em",
         }}
       >
         <CardContent>
