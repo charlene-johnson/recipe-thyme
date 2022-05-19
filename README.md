@@ -9,3 +9,7 @@ This project uses the OpenAI API and has a form where a user can input a recipe 
 ### What Was Used to Create This Project:
 
 This project was done using Reactjs and using the library of Material UI to style.
+
+### Installing Project Locally:
+
+If you would like to run this project locally, you will need to run npm install. You will also need to sign up for an OpenAI key. You would then make an .env file to store the key.
