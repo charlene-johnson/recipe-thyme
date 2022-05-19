@@ -1,10 +1,41 @@
 import React, { useState } from "react";
 import { Grid, Button, TextField, Card, CardContent } from "@mui/material";
+import { makeStyles } from "@mui/styles";
 import axios from "axios";
 
 import Recipe from "./Recipe";
 
+const useStyles = makeStyles((theme) => ({
+  recipeContainer: {
+    marginTop: "2em",
+    [theme.breakpoints.down("sm")]: {
+      marginTop: "1.2em",
+    },
+  },
+  formCard: {
+    marginBottom: "4em",
+    minWidth: 800,
+    minHeight: 300,
+    [theme.breakpoints.down("md")]: {
+      minWidth: 600,
+    },
+    [theme.breakpoints.down("sm")]: {
+      minWidth: 370,
+    },
+  },
+  button : {
+    width: "20em",
+    padding: "1em",
+    [theme.breakpoints.down("sm")] : {
+      width: "15em",
+      padding:"0.8em"
+    }
+  }
+}));
+
 export default function RecipeForm() {
+  const classes = useStyles()
+
   const [recipeInput, setRecipeInput] = useState("");
   const [ingredientsInput, setIngredientsInput] = useState("");
   const [ingredientsList, setIngredientsList] = useState("");
@@ -54,14 +85,15 @@ export default function RecipeForm() {
     setIngredientsInput("");
   }
 
+
   return (
     <Grid
       container
       direction="column"
       alignItems="center"
-      style={{ marginTop: "2em" }}
+      className={classes.recipeContainer}
     >
-      <Card sx={{ minWidth: 800, minHeight: 300, marginBottom: "4em" }}>
+      <Card className={classes.formCard} >
         <CardContent>
           <Grid item container direction="column" style={{ marginTop: "2em" }}>
             <Grid item style={{ marginBottom: "0.5em" }}>
@@ -99,7 +131,7 @@ export default function RecipeForm() {
             </Grid>
             <Grid item container justifyContent="center">
               <Button
-                style={{ width: "20em", padding: "1em" }}
+               className={classes.button}
                 onClick={submitHandler}
                 variant="contained"
               >

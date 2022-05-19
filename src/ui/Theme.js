@@ -8,6 +8,7 @@ const green = "#AED681";
 const darkGreen = "#9CCC65";
 const darkestGreen = "#8BC44A";
 
+const defaultTheme = createTheme()
 export default createTheme({
   palette: {
     common: {
@@ -44,7 +45,7 @@ export default createTheme({
     },
     h4: {
       fontFamily: PangoFont,
-      ontSize: "2em",
+      fontSize: "2em",
     },
     h5: {
       fontFamily: PangoFont,
@@ -77,6 +78,9 @@ export default createTheme({
         root: {
           color: darkestGreen,
           fontSize: "0.9rem",
+          [defaultTheme.breakpoints.down("sm")] :{
+            fontSize: "0.8rem"
+          }
         },
       },
     },
