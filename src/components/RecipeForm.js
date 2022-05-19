@@ -25,7 +25,7 @@ export default function RecipeForm() {
       url: "https://api.openai.com/v1/engines/text-curie-001/completions",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
       },
       data: JSON.stringify(data),
     }).then((response) => {
