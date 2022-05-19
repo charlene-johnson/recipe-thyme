@@ -15,9 +15,9 @@ const useStyles = makeStyles((theme) => ({
       maxWidth: 600,
     },
     [theme.breakpoints.down("sm")] : {
-      minWidth: 370,
-      maxWidth: 370
-    }
+      minWidth: 350,
+      maxWidth: 350
+    },
   },
   mainTitle: {
     [theme.breakpoints.down("md")] : {

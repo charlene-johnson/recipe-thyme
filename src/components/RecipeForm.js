@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
       minWidth: 600,
     },
     [theme.breakpoints.down("sm")]: {
-      minWidth: 370,
+      minWidth: 350,
     },
   },
   button : {
