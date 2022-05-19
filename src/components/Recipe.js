@@ -4,7 +4,10 @@ import {makeStyles} from "@mui/styles"
 
 const useStyles = makeStyles((theme) => ({
   recipeContainer: {
-    marginBottom: "4em"
+    marginBottom: "4em",
+    [theme.breakpoints.down("sm")] : {
+      marginBottom: "2.5em"
+    }
   },
   recipeCard: {
     minWidth: 800,
@@ -92,7 +95,6 @@ export default function Recipe({ recipeArray, ingredientsInput, recipeInput }) {
               style={{
                 lineHeight: "1.7em",
                 whiteSpace: "pre-line",
-                marginTop: "0.5em",
               }}
             >
               {capsIngredients}
