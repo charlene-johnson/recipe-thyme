@@ -13,3 +13,7 @@ This project was done using Reactjs and using the library of Material UI to styl
 ### Installing Project Locally:
 
 If you would like to run this project locally, you will need to run npm install. You will also need to sign up for an OpenAI key. You would then make an .env file to store the key.
+
+### Where to view this project:
+
+You can view the recipe maker at: https://recipe-thyme.netlify.app/
